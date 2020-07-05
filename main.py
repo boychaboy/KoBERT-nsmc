@@ -1,4 +1,5 @@
 import argparse
+import os
 
 from trainer import Trainer
 from utils import init_logger, load_tokenizer, set_seed, MODEL_CLASSES, MODEL_PATH_MAP
@@ -54,8 +55,13 @@ if __name__ == '__main__':
     parser.add_argument("--do_train", action="store_true", help="Whether to run training.")
     parser.add_argument("--do_eval", action="store_true", help="Whether to run eval on the test set.")
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
+    parser.add_argument("--gpu_no", type=str, default="0", help="GPU number to run model")
+
 
     args = parser.parse_args()
+
+    os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+    os.environ["CUDA_VISIBLE_DEVICES"]=args.gpu_no
 
     args.model_name_or_path = MODEL_PATH_MAP[args.model_type]
     main(args)
