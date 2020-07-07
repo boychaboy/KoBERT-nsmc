@@ -32,6 +32,7 @@ if __name__ == '__main__':
     parser.add_argument("--data_dir", default="./data", type=str, help="The input data dir")
     parser.add_argument("--train_file", default="ratings_train.txt", type=str, help="Train file")
     parser.add_argument("--test_file", default="ratings_test.txt", type=str, help="Test file")
+    parser.add_argument("--dev_file", default="ratings_dev.txt", type=str, help="Dev file")
 
     parser.add_argument("--model_type", default="kobert", type=str, help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
 
