@@ -18,6 +18,7 @@ def main(args):
 
     if args.do_train:
         trainer.train()
+        #trainer.evaluate("dev")
 
     if args.do_eval:
         trainer.load_model()
