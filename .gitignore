@@ -132,6 +132,7 @@ dmypy.json
 .idea/
 .vscode/
 model/
+logs/
 
 .DS_Store
 
